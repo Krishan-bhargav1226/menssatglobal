@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Mens At Global Immigration</title>
+    <!-- Fonts & CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-plane-departure"></i> Mens At
+                <span></span>Global</span></a>
+            <div class="mobile-toggle" id="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Visa Services</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding"
+        style="background: var(--primary-blue); padding-top: 150px; padding-bottom: 80px; text-align: center; color: white;">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; color: white; margin-bottom: 20px;">Contact Us</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">Get in touch with Hisar's best
+                visa consultants.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-section">
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper"
+                    style="background: white; padding: 40px; border-radius: 20px; box-shadow: var(--shadow-lg);">
+                    <h3 style="margin-bottom: 30px;">Send us a Message</h3>
+
+                    <form id="consultation-form">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div style="margin-bottom: 20px;">
+                            <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name
+                                <span style="color: red;">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe"
+                                class="form-control">
+                            <span class="error-msg" id="name-error">Please enter your name</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div style="margin-bottom: 20px;">
+                                <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500;">Phone
+                                    Number <span style="color: red;">*</span></label>
+                                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"
+                                    placeholder="9876543210" class="form-control">
+                                <span class="error-msg" id="phone-error">Enter valid 10-digit number</span>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email
+                                    Address <span style="color: red;">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com"
+                                    class="form-control">
+                                <span class="error-msg" id="email-error">Enter valid email</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <label for="visa-type" style="display: block; margin-bottom: 8px; font-weight: 500;">Visa
+                                Type</label>
+                            <select id="visa-type" name="visa_type" class="form-control">
+                                <option value="USA Tourist Visa">USA Tourist Visa</option>
+                                <option value="Canada Visitor Visa">Canada Visitor Visa</option>
+                                <option value="UK Visitor Visa">UK Visitor Visa</option>
+                                <option value="Schengen Visa">Schengen Visa</option>
+                                <option value="Australia Visa">Australia Visa</option>
+                                <option value="Dubai/UAE Visa">Dubai/UAE Visa</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <label for="message"
+                                style="display: block; margin-bottom: 8px; font-weight: 500;">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
+                                class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn" class="btn btn-primary"
+                                style="border: none; width: 100%;">
+                                <span class="btn-text">Send Enquiry Via Email</span>
+                                <i class="fa-solid fa-spinner fa-spin loading-spinner" style="display: none;"></i>
+                            </button>
+                            <button type="button" id="whatsapp-btn" class="btn whatsapp-btn"
+                                style="border: none; width: 100%;">
+                                <i class="fa-brands fa-whatsapp"></i> Send on WhatsApp
+                            </button>
+                        </div>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+                    <div class="section-title" style="text-align: left;">
+                        <span>Visit Our Office</span>
+                        <h2>We are here to help</h2>
+                    </div>
+                    <p style="margin-bottom: 40px;">Walk into our office for a free face-to-face consultation. We are
+                        located centrally in Hisar.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>SCO 123, Red Square Market,<br>Near Bus Stand, Hisar,<br>Haryana 125001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p><a href="tel:+918529350150">+91-85293-50150</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@mensatglobal.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <div class="map-container" style="height: 400px; width: 100%;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.565860431307!2d75.7226875!3d29.1578125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391233bc238605fd%3A0xe54904571de490!2sRed%20Square%20Market%2C%20Hisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: white;">
+                        <i class="fa-solid fa-plane-departure" style="color: var(--accent-gold);"></i>
+                        Mens At Global
+                    </a>
+                    <p>Your trusted partner for international travel. We turn your travel dreams into reality.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Red Square Market, Hisar</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91-85293-50150</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>info@mensatglobal.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mens At Global Immigration. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918529350150" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
