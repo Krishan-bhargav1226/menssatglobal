@@ -113,6 +113,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const WA_PHONE = "918529350150";
 
     /**
+     * LEAD ENRICHMENT: Capture UTMs and Referrer
+     */
+    const captureLeadMetadata = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const metadata = {
+            utm_source: urlParams.get('utm_source') || 'direct',
+            utm_medium: urlParams.get('utm_medium') || '',
+            utm_campaign: urlParams.get('utm_campaign') || '',
+            referrer: document.referrer || '',
+            landing_page: window.location.pathname,
+            submission_time: new Date().toLocaleString()
+        };
+
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            for (const [key, value] of Object.entries(metadata)) {
+                if (!form.querySelector(`input[name="${key}"]`)) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = value;
+                    form.appendChild(input);
+                }
+            }
+            // Add explicit Lead Source if missing
+            if (!form.querySelector('input[name="lead_source"]')) {
+                const sourceInput = document.createElement('input');
+                sourceInput.type = 'hidden';
+                sourceInput.name = 'lead_source';
+                sourceInput.value = 'Website Form';
+                form.appendChild(sourceInput);
+            }
+        });
+    };
+
+    captureLeadMetadata();
+
+    /**
      * Generic function to handle form submission via AJAX
      */
     const handleFormSubmit = async (formElement, statusElementId, btnElement) => {
@@ -142,11 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (data.success === "true" || response.ok) {
-                // Success
-                statusDiv.innerText = "Thank you! Your enquiry has been sent successfully. We will contact you shortly.";
-                statusDiv.classList.add('success');
-                statusDiv.style.display = 'block';
-                formElement.reset();
+                // Success - Redirect to Thank You Page
+                window.location.href = "thank-you.html";
             } else {
                 throw new Error("Form submission failed");
             }
